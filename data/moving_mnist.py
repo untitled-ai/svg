@@ -2,6 +2,13 @@ import socket
 import numpy as np
 from torchvision import datasets, transforms
 
+datasets.MNIST.urls = [
+    'https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz',
+    'https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz',
+    'https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz',
+    'https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz',
+]
+
 class MovingMNIST(object):
     
     """Data Handler that creates Bouncing MNIST dataset on the fly."""
